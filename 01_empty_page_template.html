@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>A Page Template for Our Session!</title>
+        <!-- d3 reference snippet -->
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+            /* Any CSS style rules can go here */
+            .metisText{
+                font-family: "Garamond";
+            }
+        </style>
+    </head>
+    <body>
+
+<div class='section'>
+    Hello, METIS!
+</div>
+
+<div class='section'>
+    Hello again, METIS!
+</div>
+
+<div id="container">
+    </div>
+
+<script type="text/javascript">
+
+//COMMENT IN AND THEN OUT, SECTION BY SECTION 
+
+// SELECTIONS: MIXING D3, HTML AND CSS
+// d3.select('.section')
+//     .text('D3 was here');
+
+
+// SELECT ALL
+// d3.selectAll('.section')
+//     .text('D3 was here');
+
+
+
+
+
+//FIRST creating svg elements
+        // var myFirstWord = "hello";
+        // var width=500;
+        // var height=700;
+        // var circleRadius=200;
+        // var aNumber = 6;
+
+        //     // Your beautiful D3 code will go here
+        //     // Create SVG element
+        //     var svg = d3.select("body") //CAN ALSO DO "SELECT("#CONTAINER")
+        //                 .append("svg")
+        //                 .attr("width", width)
+        //                 .attr("height", height);
+        //     svg
+        //         .append("circle")
+        //         .attr("cx", width/2) 
+        //         .attr("cy", height/2)
+        //         .attr("r", circleRadius/2)
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+
+        //     svg
+        //         .append("circle")
+        //         .attr("cx", 50) 
+        //         .attr("cy", 50)
+        //         .attr("r", 60)
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+        //     svg
+        //         .append("circle")
+        //         .attr("cx", 60) 
+        //         .attr("cy", 50)
+        //         .attr("r", 10)
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+
+        //     svg
+        //         .append("circle")
+        //         .attr("cx", 70) 
+        //         .attr("cy", 50)
+        //         .attr("r", 5)
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+
+
+
+
+
+
+
+
+
+
+//SECOND: data and svg elements
+        // var width=500;
+        // var height=700;
+        // var leftMargin = 50;
+        // var circleRadius=[30,20,10,10,5,1,30,20,10,10,5,1,30,20,10,10,5,1,30,20,10,10,5,1,30,20,10,10,5,1,30,20,10,10,5,1,30,20,10,10,5,1];
+
+        //     //Create SVG element
+        //     var svg = d3.select("body")
+        //                 .append("svg")
+        //                 .attr("width", width)
+        //                 .attr("height", height);
+        //     svg
+        //         .selectAll("circle")
+        //         .data(circleRadius)
+        //         .enter()
+        //         .append("circle")
+        //         .attr("cx", function(d,i){ 
+        //             return leftMargin+i*40; 
+        //         }) 
+        //         .attr("cy", 50)
+        //         .attr("r", function(d){return d; })
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+
+
+
+//THIRD: selecting by css classes
+        // var width=500;
+        // var height=700;
+        // var leftMargin = 50;
+        // var circleRadius=[30,20,10,1,5,1];
+
+        //     // Your beautiful D3 code will go here
+        //     //Create SVG element
+        //     var svg = d3.select("body")
+        //                 .append("svg")
+        //                 .attr("width", width)
+        //                 .attr("height", height);
+        //     svg
+        //         .selectAll("circle")
+        //         .data(circleRadius)
+        //         .enter()
+        //         .append("circle")
+        //         .attr("cx", function(d,i){ return leftMargin+i*40; }) 
+        //         .attr("cy", 50)
+        //         .attr("r", function(d){return d; })
+        //         .attr("fill", "purple")
+        //         .attr("opacity", .1);
+        //     svg
+        //         .selectAll(".metisText")
+        //         .data(circleRadius)
+        //         .enter()
+        //         .append("text") 
+        //         .attr("class","metisText")//GOTCHA
+        //         .attr("x", function(d,i){ return leftMargin+i*40; }) 
+        //         .attr("y",50)
+        //         .text(function(d){ return d; })
+
+
+
+//FOURTH: scales + dynamic placement!
+// var width=500;
+// var height=700;
+// var leftMargin = 50;
+// var circleRadius=[30,70,50,35,50,45,10,80,40,30,20,65];
+
+// var mapCircleX = d3.scale.linear()
+//     .domain([0, circleRadius.length])
+//     .range([leftMargin, width-leftMargin]);
+
+// var maxRadius = d3.max(circleRadius, function(d,i) { 
+//     return d;
+// });
+
+// var mapCircleY = d3.scale.linear()
+//     .domain([0, maxRadius])
+//     .range([0, height/2]);
+
+//             // Your beautiful D3 code will go here
+//             //Create SVG element
+//             var svg = d3.select("body")
+//                         .append("svg")
+//                         .attr("width", width)
+//                         .attr("height", height);
+//             svg
+//                 .selectAll("circle")
+//                 .data(circleRadius)
+//                 .enter()
+//                 .append("circle")
+//                 .attr("cx", function(d,i){
+//                 return width/2; 
+//                     // return mapCircleX(i);
+//                     // return leftMargin+i*40; 
+//                 }) 
+//                 .attr("cy", function(d){ 
+//                     return height/4;
+//                     // return mapCircleY(d); 
+//                 })
+//                 .attr("r", function(d){return d; })
+//                 .attr("fill", "blue")
+//                 .attr("opacity", .1);
+                // .attr("dataId","population");
+
+            // svg
+            //     .selectAll("text")
+            //     // .data(circleRadius)
+            //     // .enter()
+            //     .append("text")
+            //     .attr("x", 
+            //         // function(d,i){
+            //      width/2+maxRadius) 
+            //     //
+            //         // return mapCircleX(i);
+            //         // return leftMargin+i*40; 
+            //     // }) 
+            //     .attr("y", function(d){ 
+            //         return height/4;
+            //         // return mapCircleY(d); 
+            //     })
+            //     .text(maxRadius)
+
+
+        </script>
+    </body>
+</html>
